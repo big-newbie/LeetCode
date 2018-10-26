@@ -1,7 +1,5 @@
 package com.tf.alg.leetcode;
 
-import com.tf.alg.ListNode;
-
 /**
  * Created by tingfang
  * 2018-10-26

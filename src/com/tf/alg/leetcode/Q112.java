@@ -14,11 +14,11 @@ public class Q112 {
         return has(root, sum);
     }
 
-    private static boolean has(TreeNode root,int sum){
-        if(root.left==null&&root.right==null){
-            return sum==root.val;
+    private static boolean has(TreeNode root, int sum) {
+        if (root.left == null && root.right == null) {
+            return sum == root.val;
         }
-        return (root.left!=null&&has(root.left, sum - root.val))||(root.right!=null&&has(root.right, sum - root.val));
+        return (root.left != null && has(root.left, sum - root.val)) || (root.right != null && has(root.right, sum - root.val));
     }
 
     public static void main(String[] args) {

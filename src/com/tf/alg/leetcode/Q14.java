@@ -6,7 +6,7 @@ package com.tf.alg.leetcode;
  */
 public class Q14 {
     private static String longestCommonPrefix(String[] strs) {
-        if (strs == null||strs.length==0) {
+        if (strs == null || strs.length == 0) {
             return "";
         }
         int i = 0;
@@ -30,6 +30,6 @@ public class Q14 {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestCommonPrefix(new String[]{ }));
+        System.out.println(longestCommonPrefix(new String[]{}));
     }
 }

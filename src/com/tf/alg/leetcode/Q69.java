@@ -25,7 +25,7 @@ public class Q69 {
         }
         System.out.println("mySqrt(" + 2147395599 + ") = " + mySqrt(2147395599));
         int i = 1;
-        int j =i++;
+        int j = i++;
         System.out.println(j);
     }
 }
