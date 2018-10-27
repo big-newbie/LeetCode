@@ -1,5 +1,7 @@
 package com.tf.alg.leetcode;
 
+import java.util.Random;
+
 /**
  * Created by tingfang
  * 2018-09-17
@@ -12,20 +14,30 @@ public class Q69 {
         if (x < 4) {
             return 1;
         }
-        int t = x / 2;
-        while (t > x / t) {
-            t--;
+        int j = x;
+        int i = 0;
+        while (i + 1 < j) {
+            int m = j - (j - i) / 2;
+            int p = x / m;
+            if (p == m) {
+                return m;
+            } else if (p < m) {
+                j = m;
+            } else {
+                i = m;
+            }
         }
-        return t;
+        return i;
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 20; i++) {
-            System.out.println("mySqrt(" + i + ") = " + mySqrt(i));
+        while (true) {
+            int random = new Random().nextInt(Integer.MAX_VALUE);
+            int sqrt = mySqrt(random);
+            double sqrt1 = Math.sqrt(random);
+            if (sqrt != (int) sqrt1) {
+                System.out.println(random);
+            }
         }
-        System.out.println("mySqrt(" + 2147395599 + ") = " + mySqrt(2147395599));
-        int i = 1;
-        int j = i++;
-        System.out.println(j);
     }
 }
