@@ -38,14 +38,8 @@ public class Q15 {
                     }
                 } else if (sum > 0) {
                     n--;
-                    while (m < n && nums[n] == high) {
-                        n--;
-                    }
                 } else {
                     m++;
-                    while (m < n && nums[m] == low) {
-                        m++;
-                    }
                 }
             }
             while (i < len - 2 && nums[i] == nums[i + 1]) {
