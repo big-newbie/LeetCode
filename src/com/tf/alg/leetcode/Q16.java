@@ -12,31 +12,28 @@ public class Q16 {
             return 0;
         }
         int diff = Integer.MAX_VALUE;
-        int ret = 0;
-        int len = nums.length;
         Arrays.sort(nums);
-        for (int i = 0; i < len - 2; i++) {
-            int low = i + 1;
-            int high = len - 1;
-            while (low < high) {
-                int sum = nums[i] + nums[low] + nums[high];
-                int temp = target - sum;
-                if (temp == 0) {
+        int ret = 0;
+        for (int i = 0; i < nums.length - 2; i++) {
+            for (int j = i + 1, k = nums.length - 1; j < k; ) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == target) {
                     return sum;
-                }
-                if (Math.abs(temp) < diff) {
-                    diff = Math.abs(temp);
-                    ret = sum;
-                }
-                if (temp > 0) {
-                    low++;
+                } else if (sum > target) {
+                    if (sum - target < diff) {
+                        diff = sum - target;
+                        ret = sum;
+                    }
+                    k--;
                 } else {
-                    high--;
+                    if (target - sum < diff) {
+                        diff = target - sum;
+                        ret = sum;
+                    }
+                    j++;
                 }
             }
-            while (i < len - 2 && nums[i] == nums[i + 1]) {
-                i++;
-            }
+            for (; i < nums.length - 2 && nums[i] == nums[i + 1]; i++) {}
         }
         return ret;
     }
