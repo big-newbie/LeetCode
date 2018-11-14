@@ -9,35 +9,18 @@ public class Q11 {
         if (height == null || height.length < 2) {
             return 0;
         }
-        int i = 0;
-        int j = height.length - 1;
-        int l = i;
-        int r = j;
-        int max = Math.min(height[l], height[r]) * (r - l);
-        while (i < j) {
-            while (i < j && height[i] < height[j] && height[i] * (r - i) <= max) {
-                i++;
-            }
-            if (height[i] * (r - i) > max) {
-                max = height[i] * (r - i);
-                l = i;
-            }
+        int ret = 0;
+        for (int i = 0, j = height.length - 1; i < j; ) {
+            ret = Math.max(ret, Math.min(height[i], height[j]) * (j - i));
             if (height[i] < height[j]) {
+                ret = Math.max(ret, height[i] * (j - i));
                 i++;
-                continue;
-            }
-            while (i < j && height[j] < height[i] && height[j] * (j - l) <= max) {
-                j--;
-            }
-            if (height[j] * (j - l) > max) {
-                max = height[j] * (j - l);
-                r = j;
-            }
-            if (height[j] < height[i]) {
+            } else {
+                ret = Math.max(ret, height[j] * (j - i));
                 j--;
             }
         }
-        return max;
+        return ret;
     }
 
     public static void main(String[] args) {
