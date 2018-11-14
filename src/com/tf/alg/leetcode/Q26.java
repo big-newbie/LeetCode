@@ -9,24 +9,19 @@ import java.util.Arrays;
 public class Q26 {
 
     private static int removeDuplicates(int[] nums) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
-        if (nums.length < 2) {
-            return nums.length;
-        }
-        int len = 0;
         int count = 1;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[len] != nums[i]) {
-                nums[++len] = nums[i];
-                count = 1;
-            } else if (count == 1) {
+        int prev = nums[0];
+        for (int j = 1; j < nums.length; j++) {
+            if (prev != nums[j]) {
+                nums[count] = nums[j];
                 count++;
-                nums[++len] = nums[i];
+                prev = nums[j];
             }
         }
-        return len + 1;
+        return count;
     }
 
     public static void main(String[] args) {
