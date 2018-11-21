@@ -15,56 +15,58 @@ public class Q4 {
         if (nums1.length > nums2.length) {
             return findMedianSortedArrays(nums2, nums1);
         }
-        int l1 = nums1.length;
-        int l2 = nums2.length;
-        int low = 0;
-        int high = nums1.length;
+        int m = nums1.length;
+        int n = nums2.length;
         int i;
         int j;
-        int left;
-        boolean isOdd = ((l1 + l2) & 1) == 1;
-        while (low < high) {
-            i = (low + high) >> 1;
-            j = (l1 + l2 + 1 - low - high) >> 1;
-            if (i == 0 || i == l1) {
+        int imin = 0;
+        int imax = m;
+        int half = (m + n + 1) >> 1;
+        while (imin <= imax) {
+            i = (imin + imax) >> 1;
+            j = half - i;
+            if (i < imax && nums2[j - 1] > nums1[i]) {
+                imin = i + 1;
+            } else if (i > imin && nums1[i - 1] > nums2[j]) {
+                imax = i - 1;
+            } else {
+                int left;
                 if (i == 0) {
                     left = nums2[j - 1];
-                } else {
+                } else if (j == 0) {
                     left = nums1[i - 1];
+                } else {
+                    left = Math.max(nums1[i - 1], nums2[j - 1]);
                 }
-                if (isOdd) {
+                if (((m + n) & 1) == 1) {
                     return left;
                 }
                 int right;
-                if (i == l1) {
+                if (i == m) {
                     right = nums2[j];
-                } else {
+                } else if (j == n) {
                     right = nums1[i];
+                } else {
+                    right = Math.min(nums1[i], nums2[j]);
                 }
-                return (left + right) / 2.0;
-            } else if (nums1[i - 1] > nums2[j]) {
-                high = i - 1;
-            } else if (nums2[j - 1] > nums1[i]) {
-                low = i + 1;
-            } else if (nums1[i - 1] <= nums2[j] && nums2[j - 1] <= nums1[i]) {
-                return isOdd ? Math.max(nums1[i - 1], nums2[j - 1]) : (Math.max(nums1[i - 1], nums2[j - 1]) + Math.min(nums1[i], nums2[j])) / 2.0;
+                return (left + right) / 2D;
             }
         }
-        return 0;
+        throw new RuntimeException();
     }
 
-    private static int median(int[] nums) {
+    private static double median(int[] nums) {
         int m = nums.length / 2;
         if ((nums.length & 1) == 1) {
             return nums[m];
         }
-        return (nums[m] + nums[m - 1]) >> 1;
+        return (nums[m] + nums[m - 1]) / 2D;
     }
 
 
     public static void main(String[] args) {
         int[] nums2 = {5, 6, 7};
-        int[] nums1 = {1, 3, 4, 4, 5};
+        int[] nums1 = {10};
         System.out.println(findMedianSortedArrays(nums2, nums1));
     }
 }
