@@ -34,7 +34,7 @@ public class Q206 {
     }
 
     public static void main(String[] args) {
-        ListNode listNode = ListNode.builder().next(1, 2, 3, 4, 5).build();
+        ListNode listNode = ListNode.create(1, 2, 3, 4, 5);
         reverseList1(listNode).print();
     }
 }

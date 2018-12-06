@@ -27,11 +27,11 @@ public class Q19 {
     }
 
     public static void main(String[] args) {
-        ListNode.Builder.newBuilder().next(1).next(2).next(3).next(4).next(5).build().print();
-        removeNthFromEnd(ListNode.Builder.newBuilder().next(1).next(2).next(3).next(4).next(5).build(), 1).print();
-        removeNthFromEnd(ListNode.Builder.newBuilder().next(1).next(2).next(3).next(4).next(5).build(), 2).print();
-        removeNthFromEnd(ListNode.Builder.newBuilder().next(1).next(2).next(3).next(4).next(5).build(), 3).print();
-        removeNthFromEnd(ListNode.Builder.newBuilder().next(1).next(2).next(3).next(4).next(5).build(), 4).print();
-        removeNthFromEnd(ListNode.Builder.newBuilder().next(1).next(2).next(3).next(4).next(5).build(), 5).print();
+        ListNode.create(1, 2, 3, 4, 5);
+        removeNthFromEnd(ListNode.create(1, 2, 3, 4, 5), 1).print();
+        removeNthFromEnd(ListNode.create(1, 2, 3, 4, 5), 2).print();
+        removeNthFromEnd(ListNode.create(1, 2, 3, 4, 5), 3).print();
+        removeNthFromEnd(ListNode.create(1, 2, 3, 4, 5), 4).print();
+        removeNthFromEnd(ListNode.create(1, 2, 3, 4, 5), 5).print();
     }
 }

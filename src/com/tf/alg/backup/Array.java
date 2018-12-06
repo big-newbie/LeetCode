@@ -1,6 +1,7 @@
-package com.tf.alg;
+package com.tf.alg.backup;
 
-import com.tf.alg.ListNode.Builder;
+import com.tf.alg.ListNode;
+import com.tf.alg.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -267,7 +268,7 @@ public class Array {
         System.out.println(GetUglyNumber_Solution(100000));
 
 
-        ListNode listNode = Builder.newBuilder().next(5, 4, 3, 2, 1).build();
+        ListNode listNode = ListNode.create(5, 4, 3, 2, 1);
         f1(listNode, 1).print();
         f2(listNode, 3).print();
         f1(listNode, 5).print();
@@ -275,7 +276,7 @@ public class Array {
         System.out.println(f1(listNode, 6) == null && f2(listNode, 6) == null);
 
         System.out.println("deleteDuplication");
-        ListNode deleteDuplication = deleteDuplication(Builder.newBuilder().next(5, 5, 4, 4, 3, 3, 3, 2, 2, 1, 1).build());
+        ListNode deleteDuplication = deleteDuplication(ListNode.create(5, 5, 4, 4, 3, 3, 3, 2, 2, 1, 1));
         if (deleteDuplication == null) {
             System.out.println("deleteDuplication == null");
         } else {
@@ -283,8 +284,8 @@ public class Array {
         }
 
 
-        ListNode listNode_a = Builder.newBuilder().next(1, 7, 7, 9, 9).build();
-        ListNode listNode_b = Builder.newBuilder().next(1, 1, 3).build();
+        ListNode listNode_a = ListNode.create(1, 7, 7, 9, 9);
+        ListNode listNode_b = ListNode.create(1, 1, 3);
         addTwoNumbers(listNode_a, listNode_b).print();
     }
 

@@ -1,4 +1,7 @@
-package com.tf.alg;
+package com.tf.alg.backup;
+
+import com.tf.alg.ListNode;
+import com.tf.alg.TreeNode;
 
 /**
  * Created by tingfang
@@ -36,7 +39,7 @@ public class A {
         System.out.println(FindGreatestSumOfSubArray(arr));
         System.out.println(NumberOf1(4));
 
-        System.out.println(EntryNodeOfLoop(ListNode.Builder.newBuilder().next(1, 2, 3, 4, 5, 6).build()));
+        System.out.println(EntryNodeOfLoop(ListNode.create(1, 2, 3, 4, 5, 6)));
     }
 
     ListNode FindFirstCommonNode1(ListNode pHead1, ListNode pHead2, ListNode p2) {

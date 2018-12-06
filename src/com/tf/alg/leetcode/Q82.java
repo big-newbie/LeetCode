@@ -31,6 +31,6 @@ public class Q82 {
     }
 
     public static void main(String[] args) {
-        deleteDuplicates(ListNode.builder().next(1, 1, 2, 2, 3, 3, 4, 4, 5).build()).print();
+        deleteDuplicates(ListNode.create(1, 1, 2, 2, 3, 3, 4, 4, 5)).print();
     }
 }

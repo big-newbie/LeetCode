@@ -57,14 +57,14 @@ public class Q61 {
     }
 
     public static void main(String[] args) {
-        System.out.print("rotateRight(ListNode.builder().next(1,2,3,4,5), 2) = ");
-        rotateRight(ListNode.builder().next(1, 2, 3, 4, 5).build(), 2).print();
-        System.out.print("rotateRight(ListNode.builder().next(1,2,3,4,5), 6) = ");
-        rotateRight(ListNode.builder().next(1, 2, 3, 4, 5).build(), 6).print();
+        System.out.print("rotateRight(ListNode.create(1,2,3,4,5), 2) = ");
+        rotateRight(ListNode.create(1, 2, 3, 4, 5), 2).print();
+        System.out.print("rotateRight(ListNode.create(1,2,3,4,5), 6) = ");
+        rotateRight(ListNode.create(1, 2, 3, 4, 5), 6).print();
 
-        System.out.print("rotateRight1(ListNode.builder().next(1,2,3,4,5), 2) = ");
-        rotateRight1(ListNode.builder().next(1, 2, 3, 4, 5).build(), 2).print();
-        System.out.print("rotateRight1(ListNode.builder().next(1,2,3,4,5), 6) = ");
-        rotateRight1(ListNode.builder().next(1, 2, 3, 4, 5).build(), 6).print();
+        System.out.print("rotateRight1(ListNode.create(1,2,3,4,5), 2) = ");
+        rotateRight1(ListNode.create(1, 2, 3, 4, 5), 2).print();
+        System.out.print("rotateRight1(ListNode.create(1,2,3,4,5), 6) = ");
+        rotateRight1(ListNode.create(1, 2, 3, 4, 5), 6).print();
     }
 }

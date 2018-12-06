@@ -1,7 +1,6 @@
 package com.tf.alg.leetcode;
 
 import com.tf.alg.ListNode;
-import com.tf.alg.ListNode.Builder;
 
 /**
  * Created by tingfang
@@ -31,7 +30,7 @@ public class Q21 {
     }
 
     public static void main(String[] args) {
-        ListNode merged = mergeTwoLists(Builder.newBuilder().next(1, 2, 3, 4, 5).build(), Builder.newBuilder().next(1, 2, 3, 4, 5, 6, 7).build());
+        ListNode merged = mergeTwoLists(ListNode.create(1, 2, 3, 4, 5), ListNode.create(1, 2, 3, 4, 5, 6, 7));
         merged.print();
     }
 }

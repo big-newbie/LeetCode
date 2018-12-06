@@ -38,6 +38,6 @@ public class Q25 {
     }
 
     public static void main(String[] args) {
-        reverseKGroup(ListNode.builder().next(1, 2, 3, 4, 5, 6, 7).build(), 8).print();
+        reverseKGroup(ListNode.create(1, 2, 3, 4, 5, 6, 7), 8).print();
     }
 }

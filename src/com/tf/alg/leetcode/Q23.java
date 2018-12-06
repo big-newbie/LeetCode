@@ -27,11 +27,11 @@ public class Q23 {
 
     public static void main(String[] args) {
         ListNode[] lists = {
-                ListNode.builder().next(0).build(),
-                ListNode.builder().next(1, 4, 7).build(),
-                ListNode.builder().next(2, 5, 8).build(),
-                ListNode.builder().next(3, 6, 9).build(),
-                ListNode.builder().next(10).build()
+                ListNode.create(0),
+                ListNode.create(1, 4, 7),
+                ListNode.create(2, 5, 8),
+                ListNode.create(3, 6, 9),
+                ListNode.create(10)
         };
         mergeKLists(lists).print();
     }
